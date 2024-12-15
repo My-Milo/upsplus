@@ -15,7 +15,7 @@ DEVICE_BUS = 1
 DEVICE_ADDR = 0x17
 
 # Set the threshold of UPS automatic power-off to prevent damage caused by battery over-discharge, unit: mV.
-PROTECT_VOLT = 3500
+PROTECT_VOLT = 2700
 
 # Set the sample period, Unit: min default: 2 min.
 SAMPLE_TIME = 2
@@ -69,7 +69,7 @@ for i in range(1, 255):
 # Enable: write 1 to register 0x19 == 25
 # Disable: write 0 to register 0x19 == 25
 
-bus.write_byte_data(DEVICE_ADDR, 25, 1)
+bus.write_byte_data(DEVICE_ADDR, 25, 0)
 
 # Reset Protect voltage
 bus.write_byte_data(DEVICE_ADDR, 17, PROTECT_VOLT & 0xFF)
